@@ -142,12 +142,96 @@ const projects = [
     members: 8,
     bgColor: 'bg-green-500',
   },
+  {
+    name: 'Templates',
+    initials: 'T',
+    href: '#',
+    members: 16,
+    bgColor: 'bg-yellow-500',
+  },
+  {
+    name: 'React Components',
+    initials: 'RC',
+    href: '#',
+    members: 8,
+    bgColor: 'bg-green-500',
+  },
+  {
+    name: 'Graph API',
+    initials: 'GA',
+    href: '#',
+    members: 16,
+    bgColor: 'bg-pink-600',
+  },
+  {
+    name: 'Component Design',
+    initials: 'CD',
+    href: '#',
+    members: 12,
+    bgColor: 'bg-purple-600',
+  },
+  {
+    name: 'Templates',
+    initials: 'T',
+    href: '#',
+    members: 16,
+    bgColor: 'bg-yellow-500',
+  },
+  {
+    name: 'React Components',
+    initials: 'RC',
+    href: '#',
+    members: 8,
+    bgColor: 'bg-green-500',
+  },
+  {
+    name: 'Templates',
+    initials: 'T',
+    href: '#',
+    members: 16,
+    bgColor: 'bg-yellow-500',
+  },
+  {
+    name: 'React Components',
+    initials: 'RC',
+    href: '#',
+    members: 8,
+    bgColor: 'bg-green-500',
+  },
+  {
+    name: 'Graph API',
+    initials: 'GA',
+    href: '#',
+    members: 16,
+    bgColor: 'bg-pink-600',
+  },
+  {
+    name: 'Component Design',
+    initials: 'CD',
+    href: '#',
+    members: 12,
+    bgColor: 'bg-purple-600',
+  },
+  {
+    name: 'Templates',
+    initials: 'T',
+    href: '#',
+    members: 16,
+    bgColor: 'bg-yellow-500',
+  },
+  {
+    name: 'React Components',
+    initials: 'RC',
+    href: '#',
+    members: 8,
+    bgColor: 'bg-green-500',
+  },
 ];
 
 export default function Example() {
   return (
     <div>
-      <h2 className="text-sm font-medium text-gray-500">Pinned Projects</h2>
+      <h2 className="text-sm font-medium text-gray-500">Pinned Projects AA</h2>
       <ul
         role="list"
         className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">

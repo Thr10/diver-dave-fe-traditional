@@ -12,7 +12,7 @@
   }
   ```
 */
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Menu, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
@@ -25,6 +25,8 @@ import LgSearch from './components/LgSearch';
 import NoLgMenuPopoverContent from './components/NoLgMenuPopoverContent';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import { useAsyncEffect } from 'ahooks';
+import { postData } from '../../api/cooking';
 
 const user = {
   name: 'Tom Cook',
@@ -50,6 +52,10 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example() {
+  useAsyncEffect(async () => {
+    const res = await fetch('http://localhost:3005/cooking/getDetail/1');
+    console.log(await res.json());
+  }, []);
   return (
     <>
       {/*

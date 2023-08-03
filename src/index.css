@@ -22,7 +22,7 @@
 
 @layer base {
   html {
-    @apply h-screen bg-gray-100;
+    @apply h-screen bg-gray-100 overflow-hidden;
   }
   body {
     @apply h-screen;
