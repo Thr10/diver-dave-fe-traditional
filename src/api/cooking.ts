@@ -1,3 +1,5 @@
+import { CookingItemBaseType } from '../types/cooking';
+
 async function postData(url = '', data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
@@ -16,4 +18,9 @@ async function postData(url = '', data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-export { postData };
+async function getCookingList(): Promise<CookingItemBaseType[]> {
+  const res = await fetch('http://www.davewiki.fun/server/cooking/getList');
+  return await res.json();
+}
+
+export { postData, getCookingList };

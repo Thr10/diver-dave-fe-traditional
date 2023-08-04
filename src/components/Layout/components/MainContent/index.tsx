@@ -16,6 +16,7 @@ export default function MainContent() {
               </h2>
               <div className="overflow-hidden  bg-white shadow h-full">
                 <div className="p-6">
+                  {/* 由路由控制的页面内容全在这个组件里 */}
                   <MainLeftContent />
                 </div>
               </div>
