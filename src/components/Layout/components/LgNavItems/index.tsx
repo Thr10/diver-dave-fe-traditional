@@ -1,16 +1,19 @@
 import classNames from '../../../../tools/classNames';
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Profile', href: '#', current: false },
-  { name: 'Resources', href: '#', current: false },
-  { name: 'Company Directory', href: '#', current: false },
-  { name: 'Openings', href: '#', current: false },
+  { name: '菜谱', href: '#', current: true },
+  { name: '食材', href: '#', current: false },
+  { name: '武器', href: '#', current: false },
+  { name: '鱼类', href: '#', current: false },
+  { name: '员工', href: '#', current: false },
+  { name: '节日', href: '#', current: false },
+  { name: 'Boss', href: '#', current: false },
+  { name: '事件', href: '#', current: false },
 ];
 
 export default function LgNavItems() {
   return (
-    <div className="col-span-2">
+    <div className="col-span-2 text-NotoSansSC">
       <nav className="flex space-x-4">
         {navigation.map((item) => (
           <a

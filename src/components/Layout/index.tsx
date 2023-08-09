@@ -22,8 +22,6 @@ import LgSearch from './components/LgSearch';
 import NoLgMenuPopoverContent from './components/NoLgMenuPopoverContent';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-import { useAsyncEffect } from 'ahooks';
-import { postData } from '../../api/cooking';
 
 export default function Layout() {
   return (

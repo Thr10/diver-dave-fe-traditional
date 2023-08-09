@@ -2,17 +2,19 @@ import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import classNames from '../../tools/classNames';
 import { useAsyncEffect } from 'ahooks';
 import { useState } from 'react';
-import { CookingItemBaseType } from '../../types/cooking';
+import { CookingItemBaseInfo } from '../../types/cooking';
 import { getCookingList } from '../../api/cooking';
 import TestIconImg from '../../assets/images/test.png';
-import { ReactComponent as CornIcon } from '../../assets/icons/corn_icon.svg';
-import { ReactComponent as FishIcon } from '../../assets/icons/fish_icon.svg';
-import { ReactComponent as PepperIcon } from '../../assets/icons/pepper_icon.svg';
+// import { ReactComponent as CoinIcon } from '../../assets/icons/coin_icon.svg';
+// import { ReactComponent as BowlIcon } from '../../assets/icons/bowl_icon.svg';
 import { useNavigate } from 'react-router-dom';
+import CoinIcon from '../../assets/images/coin_icon.png';
+import AmountIcon from '../../assets/images/amount_icon_icon.png';
+import TastyIcon from '../../assets/images/tasty_icon.png';
 
 export default function CookingList() {
   const nav = useNavigate();
-  const [cookings, setCookings] = useState<CookingItemBaseType[]>([]);
+  const [cookings, setCookings] = useState<CookingItemBaseInfo[]>([]);
   useAsyncEffect(async () => {
     const cookings = await getCookingList();
     setCookings(cookings);
@@ -26,7 +28,7 @@ export default function CookingList() {
     <div>
       <ul
         role="list"
-        className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2">
         {cookings.map((cooking) => (
           <li
             key={cooking.uuid}
@@ -40,21 +42,21 @@ export default function CookingList() {
             </div>
             <div className="flex flex-1 items-center justify-between truncate rounded-r-md  border-gray-200 bg-white">
               <div className="flex-1 truncate px-4 py-2 text-sm">
-                <div className="font-medium text-gray-900 hover:text-gray-600">
+                <div className="font-medium text-gray-900 hover:text-gray-600 NotoSansSC">
                   {cooking.name_zh}
                 </div>
-                <div className="flex items-center justify-start text-gray-400 ">
-                  <div className="flex items-center">
-                    <FishIcon className="w-4 h-4" />
-                    {cooking.fish_needs_num}
+                <div className="flex items-center justify-start text-gray-400 gap-2">
+                  <div className="flex items-center gap-1">
+                    <img src={CoinIcon} className="w-4" />
+                    {cooking.price}
                   </div>
-                  <div className="flex items-center">
-                    <CornIcon className="w-3 h-3" />
-                    {cooking.farm_needs_num}
+                  <div className=" flex items-center gap-1">
+                    <img src={TastyIcon} className="w-4" />
+                    {cooking.mark}
                   </div>
-                  <div className="flex items-center">
-                    <PepperIcon className="w-3 h-3" />
-                    {cooking.spices_needs_num}
+                  <div className=" flex items-center gap-1">
+                    <img src={AmountIcon} className="w-4" />
+                    {cooking.yield}
                   </div>
                 </div>
               </div>
