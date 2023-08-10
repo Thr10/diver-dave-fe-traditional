@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'festive': '#FF1493',
+      },
       fontFamily: {
         'sans': ['ZCOOL KuaiLe', ...defaultTheme.fontFamily.sans]
       }

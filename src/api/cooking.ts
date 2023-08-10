@@ -1,4 +1,4 @@
-import { CookingItemBaseInfo } from '../types/cooking';
+import { CookingItemBaseInfo, CookingItemDetailInfo } from '../types/cooking';
 
 // async function postData(url = '', data = {}) {
 //   // Default options are marked with *
@@ -20,12 +20,17 @@ import { CookingItemBaseInfo } from '../types/cooking';
 
 const baseUrl =
   process.env.NODE_ENV === 'production'
-    ? 'http://www.davewiki.fun/server/'
-    : 'http://localhost:3005/';
+    ? 'http://www.davewiki.fun/server'
+    : 'http://localhost:3005';
 
 async function getCookingList(): Promise<CookingItemBaseInfo[]> {
-  const res = await fetch(`${baseUrl}cooking/getList`);
+  const res = await fetch(`${baseUrl}/cooking/getList`);
   return await res.json();
 }
 
-export { getCookingList };
+async function getCookingDetail(uuid: number): Promise<CookingItemDetailInfo> {
+  const res = await fetch(`${baseUrl}/cooking/getDetail/${uuid}`);
+  return await res.json();
+}
+
+export { getCookingList, getCookingDetail };

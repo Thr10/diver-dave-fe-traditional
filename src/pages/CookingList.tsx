@@ -54,7 +54,7 @@ export const COOKING_TAG_MAP: Record<CookingTag, CookingTagRenderTransferInfo> =
     },
   };
 
-export default function NewCookingList() {
+export default function CookingList() {
   const nav = useNavigate();
   const [cookings, setCookings] = useState<CookingItemBaseInfo[]>([]);
   useAsyncEffect(async () => {
@@ -72,6 +72,7 @@ export default function NewCookingList() {
       {cookings.map((cooking) => (
         <li
           key={cooking.uuid}
+          onClick={() => goDetailPage(cooking.uuid)}
           className="overflow-hidden rounded-xl border border-gray-200 bg-opacity-20">
           <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-100 p-6 bg-opacity-50 relative">
             <img
@@ -120,6 +121,9 @@ export default function NewCookingList() {
                   <img src={AmountIcon} className="w-4" />
                   {cooking.yield}
                 </div>
+              </div>
+              <div>
+                <img src="" alt="" />
               </div>
             </div>
             <div className="flex justify-start gap-x-4 py-3">

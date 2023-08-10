@@ -23,7 +23,7 @@ export type CookingMenuItem = {
   required: number;
 };
 
-export type CookingUnlockType = 'Employee' | 'SHOP' | 'SPECIAL';
+export type CookingUnlockType = 'EMPLOYEE' | 'SHOP' | 'SPECIAL';
 export type CookingTag =
   | 'NO_FARM'
   | 'NO_FISH'
